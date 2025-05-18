@@ -1,26 +1,17 @@
-import os
-from dotenv import load_dotenv
-
-load_dotenv()  # This must be at the top
+import streamlit as st
 
 class Config:
-    # Existing configurations
-    SECRET_KEY = os.getenv("SECRET_KEY")
-    DATABASE_URL = os.getenv("DATABASE_URL")
+    # Database
+    DATABASE_URL = st.secrets["database"]["DATABASE_URL"]
     
-    # Stripe configurations
-    STRIPE_PUBLIC_KEY = os.getenv("STRIPE_PUBLIC_KEY")
-    STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY")  # Add this line
+    # Stripe
+    STRIPE_SECRET_KEY = st.secrets["stripe"]["SECRET_KEY"]
+    STRIPE_PUBLIC_KEY = st.secrets["stripe"]["PUBLIC_KEY"]
     
-    # Admin configurations
-    ADMIN_USERNAME = os.getenv("ADMIN_USERNAME")
-    ADMIN_PASSWORD = os.getenv("ADMIN_PASSWORD")
-    ADMIN_EMAIL = os.getenv("ADMIN_EMAIL")
-    ENV = os.getenv("ENV", "production")
-
-    @staticmethod
-    def verify_stripe():
-        if not Config.STRIPE_SECRET_KEY:
-            raise ValueError("STRIPE_SECRET_KEY missing from environment")
-        if not Config.STRIPE_PUBLIC_KEY:
-            raise ValueError("STRIPE_PUBLIC_KEY missing from environment")
+    # Admin
+    ADMIN_USERNAME = st.secrets["admin"]["USERNAME"]
+    ADMIN_PASSWORD = st.secrets["admin"]["PASSWORD"]
+    ADMIN_EMAIL = st.secrets["admin"]["EMAIL"]
+    
+    # Environment
+    ENV = st.secrets["environment"]["ENV"]
