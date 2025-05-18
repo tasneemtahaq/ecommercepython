@@ -1,6 +1,11 @@
 from sqlalchemy import create_engine, Column, Integer, String, Float, Text, Boolean, ForeignKey
 from sqlalchemy.orm import sessionmaker, relationship, declarative_base
 from config import Config
+from pathlib import Path
+
+# Ensure database directory exists
+db_path = Path("/mount/src/ecommercepython/data")
+db_path.mkdir(parents=True, exist_ok=True)
 
 Base = declarative_base()
 
