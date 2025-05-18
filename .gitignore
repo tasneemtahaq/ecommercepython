@@ -1,13 +1,13 @@
-.env
-__pycache__/
-*.pyc
-*.db
-*.sqlite3
-venv/
-.env/
-# Secrets
+# Secret files
 .streamlit/secrets.toml
 secrets.toml
+.env
 *.env
-assets/images/products/*
-!assets/images/products/.gitkeep
+
+# Database files
+*.db
+*.sqlite3
+
+# IDE files
+.idea/
+.vscode/
