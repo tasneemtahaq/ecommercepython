@@ -5,6 +5,9 @@ __pycache__/
 *.sqlite3
 venv/
 .env/
-.secret.toml
+# Secrets
+.streamlit/secrets.toml
+secrets.toml
+*.env
 assets/images/products/*
 !assets/images/products/.gitkeep

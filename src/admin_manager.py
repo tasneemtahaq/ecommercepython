@@ -7,6 +7,9 @@ from config import Config
 class AdminManager:
     def __init__(self):
         self.session = Session()
+
+    def __del__(self):
+        self.session.close()
         
     # User Management
     def get_all_users(self):

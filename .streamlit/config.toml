@@ -1,0 +1,42 @@
+# .streamlit/config.toml
+
+[theme]
+# Light theme configuration
+primaryColor = "#FF4B4B"       # Primary brand color (red for e-commerce)
+backgroundColor = "#FFFFFF"    # Background color
+secondaryBackgroundColor = "#F0F2F6"  # Secondary background
+textColor = "#31333F"          # Main text color
+font = "sans serif"            # App font
+
+# Dark theme configuration (optional)
+[theme.base]
+dark = false                   # Set to true for dark mode by default
+
+[runner]
+fastRerun = true               # Enable fast reruns
+
+[server]
+port = 8501                    # Default port
+enableCORS = false             # Disable CORS unless needed
+enableXsrfProtection = true    # Security protection
+
+[browser]
+serverAddress = "localhost"    # Default address
+gatherUsageStats = false       # Disable usage statistics
+
+[client]
+showErrorDetails = true        # Helpful for debugging
+
+[mapbox]
+token = ""                     # Add if using Mapbox maps
+
+[ui]
+wideMode = true                # Use wide layout
+hideTopBar = false             # Show top bar
+hideSidebarNav = false         # Show sidebar navigation
+
+[logger]
+level = "info"                 # Logging level
+
+[toolbar]
+mode = "auto"                  # Auto-hide toolbar in viewer mode
