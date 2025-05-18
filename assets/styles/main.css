@@ -1,0 +1,144 @@
+/* Modern E-Commerce Styling */
+
+/* Base Styles */
+:root {
+    --primary: #2c3e50;
+    --secondary: #3498db;
+    --accent: #e74c3c;
+    --light: #ecf0f1;
+    --dark: #2c3e50;
+    --success: #2ecc71;
+    --warning: #f1c40f;
+    --danger: #e74c3c;
+}
+
+/* Main Container */
+.stApp {
+    background: #f8f9fa;
+    min-height: 100vh;
+}
+
+/* Cards */
+/* Product Cards */
+.product-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1rem 0;
+    transition: transform 0.2s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Clickable Images */
+img {
+    cursor: pointer;
+    border-radius: 8px;
+    transition: opacity 0.2s;
+}
+
+img:hover {
+    opacity: 0.9;
+}
+
+/* Product Images */
+.stImage img {
+    border-radius: 10px !important;
+    object-fit: cover;
+    height: 200px !important;
+}
+
+/* Forms */
+.stTextInput>div>div>input,
+.stTextArea>div>textarea,
+.stNumberInput>div>div>input {
+    border: 2px solid #dfe6e9 !important;
+    border-radius: 8px !important;
+    padding: 0.8rem 1rem !important;
+    font-size: 16px !important;
+}
+
+/* Cart Items */
+.cart-item {
+    background: white !important;
+    border-radius: 10px !important;
+    padding: 1rem !important;
+    margin: 0.5rem 0 !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Checkout Form */
+.checkout-form {
+    background: white !important;
+    border-radius: 15px !important;
+    padding: 2rem !important;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+/* Admin Dashboard */
+.admin-table {
+    background: white !important;
+    border-radius: 10px !important;
+    padding: 1rem !important;
+    margin: 1rem 0 !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .product-card {
+        width: 100% !important;
+        margin: 1rem 0 !important;
+    }
+    
+    .stImage img {
+        height: 150px !important;
+    }
+}
+/* Home Page Specific Styles */
+.category-card {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.category-card img {
+    border-radius: 10px;
+    margin: 0.5rem 0;
+}
+
+.featured-section {
+    margin: 2rem 0;
+    padding: 2rem;
+    background: rgba(255,255,255,0.9);
+    border-radius: 15px;
+}
+/* Clickable product cards */
+.stButton>button {
+    width: 100% !important;
+    height: auto !important;
+    padding: 0 !important;
+    border: none !important;
+    background: none !important;
+}
+
+.stButton>button:hover {
+    transform: scale(0.98);
+    cursor: pointer;
+}
+
+/* Product image hover effect */
+img:hover {
+    opacity: 0.9;
+    transition: opacity 0.2s ease-in-out;
+}
