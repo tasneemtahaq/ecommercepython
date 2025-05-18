@@ -74,17 +74,18 @@ class AdminManager:
             return False
 
     # Order Management
-def get_all_orders(self):
-    """Get all orders with related information"""
-    try:
-        return self.session.query(Order)\
-            .options(
-                joinedload(Order.items).joinedload(OrderItem.product)  # Correct loading path
-            )\
-            .all()
-    except SQLAlchemyError as e:
-        print(f"Error fetching orders: {str(e)}")
-        return []
+    def get_all_orders(self):
+        """Get all orders with related information"""
+        try:
+            return self.session.query(Order)\
+                .options(
+                    joinedload(Order.items).joinedload(OrderItem.product)  # Correct relationship path
+                )\
+                .all()
+        except SQLAlchemyError as e:
+            print(f"Error fetching orders: {str(e)}")
+            return []
+    
 
     def update_order_status(self, order_id: int, new_status: str):
         """Update order status"""
