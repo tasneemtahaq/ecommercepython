@@ -23,7 +23,7 @@ def show():
         with st.form("product_form", clear_on_submit=True):
             name = st.text_input("Product Name", key="prod_name")
             price = st.number_input("Price", min_value=0.0, step=0.01, key="prod_price")
-            category = st.selectbox("Category", ["leather", "artificial", "backpack"], key="prod_category")
+            category = st.selectbox("Category", ["Handbag", "Totebag", "Backpack"], key="prod_category")
             description = st.text_area("Description", key="prod_desc")
             image = st.file_uploader("Product Image", type=["jpg", "png"], key="prod_image")
             

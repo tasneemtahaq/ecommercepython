@@ -8,7 +8,7 @@ def show():
     st.title("🛍️ Our Products")
     
     # Category filter
-    categories = ["leather", "artificial", "backpack"]
+    categories = ["Handbag", "Totebag", "Backpack"]
     selected_category = st.selectbox("Filter by Category", ["All"] + categories)
     
     # Get products
