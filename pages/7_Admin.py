@@ -36,13 +36,20 @@ def show():
     with tab2:
         st.subheader("Order Management")
         orders = admin_mgr.get_all_orders()
-        for order in orders:
-            with st.expander(f"Order #{order.id} - {order.status}"):
-                st.write(f"Total: ${order.total}")
-                st.write("Products:")
-                for item in order.items:
-                    st.write(f"- {item.product.name} x{item.quantity}")
-
+        if not orders:
+            st.write("No orders found.")
+        else:
+            for order in orders:
+                with st.expander(f"Order #{order.id} - {order.status}"):
+                    col1, col2 = st.columns(2)
+                    with col1:
+                        st.write(f"**Total:** ${order.total:.2f}")
+                        st.write(f"**Status:** {order.status}")
+                    
+                    with col2:
+                        st.write("**Items:**")
+                        for item in order.items:
+                            st.write(f"- {item.product.name} x{item.quantity} (${item.product.price:.2f} each)")
     with tab3:
         st.subheader("User Management")
         users = admin_mgr.get_all_users()

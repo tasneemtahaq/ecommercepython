@@ -37,7 +37,7 @@ class Order(Base):
     user_id = Column(Integer, ForeignKey('users.id'))
     total = Column(Float)
     status = Column(String(20), default='pending')
-    items = relationship('OrderItem', back_populates='order')  # Correct relationship name
+    items = relationship('OrderItem', back_populates='order')  # Correct relationship
 
 class OrderItem(Base):
     __tablename__ = 'order_items'
@@ -45,7 +45,7 @@ class OrderItem(Base):
     order_id = Column(Integer, ForeignKey('orders.id'))
     product_id = Column(Integer, ForeignKey('products.id'))
     quantity = Column(Integer)
-    order = relationship('Order', back_populates='items')  # Match relationship name
+    order = relationship('Order', back_populates='items')  # Match back_populates
     product = relationship('Product')
 
 engine = create_engine(Config.DATABASE_URL)
