@@ -7,6 +7,11 @@ from pathlib import Path
 db_path = Path("/mount/src/ecommercepython/data")
 db_path.mkdir(parents=True, exist_ok=True)
 
+print(f"Using database at: {Config.DATABASE_URL}")  # Debug line
+
+engine = create_engine(Config.DATABASE_URL, connect_args={"check_same_thread": False})
+Session = sessionmaker(bind=engine)
+
 Base = declarative_base()
 
 class User(Base):
